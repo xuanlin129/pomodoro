@@ -4,15 +4,16 @@
       <v-col cols="12">
         <h1>事項</h1>
       </v-col>
-      <v-col cols="12">
+      <v-col cols="12" class="list">
         <v-text-field
           v-model="newItem"
           label="新增事項"
-          append-icon="mdi-plus"
+          append-inner-icon="mdi-plus"
           @keydown.enter="onInputSubmit"
-          @click:append="onInputSubmit"
+          @click:append-inner="onInputSubmit"
           :rules="[rules.required, rules.length]"
           ref="newItemInput"
+          variant="outlined"
         >
         </v-text-field>
         <v-table>
@@ -57,17 +58,19 @@
       <v-col cols="12">
         <h1>已完成事項</h1>
       </v-col>
-      <v-col cols="12">
+      <v-col cols="12" class="list">
         <v-table>
           <thead>
             <tr>
               <th>名稱</th>
+              <th>日期</th>
               <th>操作</th>
             </tr>
           </thead>
           <tbody>
             <tr v-for="item in finishedItems" :key="item.id">
               <td>{{ item.name }}</td>
+              <td>{{ item.date }}</td>
               <td>
                 <v-btn
                   icon="mdi-delete"

@@ -2,6 +2,7 @@ import { defineStore } from 'pinia';
 
 const time = parseInt(import.meta.env.VITE_TIME)
 const timeBreak = parseInt(import.meta.env.VITE_TIME_BREAK)
+const today = new Date()
 
 export const useListStore = defineStore('list', {
   state: () => ({     
@@ -54,7 +55,8 @@ export const useListStore = defineStore('list', {
       if (!this.break ) {
         this.finishedItems.push({
           name: this.currentItem,
-          id: this.id++
+          id: this.id++,
+          date: `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()} ${today.getHours()}:${today.getMinutes()}`
         })
       }
       

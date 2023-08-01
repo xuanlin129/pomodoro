@@ -1,14 +1,21 @@
 <template>
-  <v-container>
+  <v-container class="h-100 d-flex align-center justify-center">
     <v-row class="text-center">
       <v-col cols="12">
-        <h1>{{ currentText }}</h1>
-        <h1>{{ currentTime }}</h1>
+        <div id="today" class="mx-auto d-flex align-center justify-center">
+          西元 {{ today.getFullYear() }} 年
+          {{ today.getMonth() + 1 }} 月
+          {{ today.getDate() }} 日
+        </div>
       </v-col>
-      <v-col cols="12">
-        <v-btn variant="text" icon="mdi-play" v-if="status !== STATUS.COUNTING" @click="startTimer"></v-btn>
-        <v-btn variant="text" icon="mdi-pause" v-if="status === STATUS.COUNTING" @click="pauseTimer"></v-btn>
-        <v-btn variant="text" icon="mdi-skip-next" v-if="currentItem.length > 0" @click="finishTimer"></v-btn>
+      <v-col cols="12" class="mt-5">
+        <div id="doing" class="mx-auto d-flex flex-column align-center justify-center">
+          <h1>{{ currentText }}</h1>
+          <h1>{{ currentTime }}</h1>
+          <v-btn variant="text" icon="mdi-play" v-if="status !== STATUS.COUNTING" @click="startTimer"></v-btn>
+          <v-btn variant="text" icon="mdi-pause" v-if="status === STATUS.COUNTING" @click="pauseTimer"></v-btn>
+          <v-btn variant="text" icon="mdi-skip-next" v-if="currentItem.length > 0" @click="finishTimer"></v-btn>
+        </div>
       </v-col>
     </v-row>
   </v-container>
@@ -97,5 +104,6 @@ const currentTime = computed(() => {
   return m + ':' + s
 })
 
+const today = new Date()
 
 </script>

@@ -1,0 +1,59 @@
+#appBar {
+  background: #526A4F;
+  color: #fff;
+  font-family: '微軟正黑體';
+  .v-container {
+    width: 80%;
+  }
+}
+
+#today {
+  font-size: 16px;
+  font-weight: bolder;
+  width: 250px;
+  height: 80px;
+  background: #b9b5aa;
+  border-radius: 3rem;
+  margin-bottom: 30px;
+
+  @media (min-width: 768px) {
+    width: 500px;
+    height: 80px;
+    font-size: 24px;
+  }
+}
+
+#doing {
+  width: 250px;
+  height: 300px;
+  background: linear-gradient(#b9b5aa, #938d7d);
+  font-size: 18px;
+  border-radius: 10rem 18rem 12rem 14rem;
+  .v-btn {
+    font-size: 40px;
+  }
+  @media (min-width: 768px) {
+    width: 500px;
+    height: 600px;
+    font-size: 30px;
+  }
+}
+
+thead {
+  background: #638583;
+  th {
+    color: #fff !important;
+  }
+}
+
+.list {
+  background: #b9b5aa;
+  border-radius: 1rem;
+  color: #638583;
+  font-weight: bolder;
+}
+
+.v-radio-group {
+  background: #fff;
+  border-radius: 1rem;
+}

@@ -4,7 +4,7 @@
       <v-col cols="12">
         <h1>通知</h1>
       </v-col>
-      <v-col cols="12">
+      <v-col cols="12" class="list">
         <v-radio-group inline v-model="notify">
           <v-radio label="開啟" :value="true"></v-radio>
           <v-radio label="關閉" :value="false"></v-radio>
@@ -13,7 +13,7 @@
       <v-col cols="12">
         <h1>設定</h1>
       </v-col>
-      <v-col cols="12">
+      <v-col cols="12" class="list">
         <v-table>
           <thead>
             <tr>
